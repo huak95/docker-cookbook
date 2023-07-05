@@ -22,6 +22,19 @@ docker build . -t "python-fastapi"
 docker run -it -p 8000:8000 --rm  python-fastapi 
 ```
 
+## yolov5-yooo
+learn how to use big docker images
+```bash
+cd yolov5-yooo
+docker build . -t "yolov5-yooo"
+docker run -it --rm yolov5-yooo /bin/bash
+
+python3 segment/predict.py \
+    --weights yolov5s-seg.pt --source 'yolo_test_image.jpg' --exist-ok
+
+docker cp yolov5-yooo:runs/predict-seg/exp /runs # Can't copy results
+```
+
 ## push docker container to AWS ECR
 
 ```bash 
@@ -38,3 +51,4 @@ docker push 654934115675.dkr.ecr.ap-southeast-1.amazonaws.com/python-fastapi
 # run docker
 docker run -it -p 8000:8000 --rm 654934115675.dkr.ecr.ap-southeast-1.amazonaws.com/python-fastapi
 ```
+
