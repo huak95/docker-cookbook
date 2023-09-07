@@ -52,3 +52,5 @@ docker push 654934115675.dkr.ecr.ap-southeast-1.amazonaws.com/python-fastapi
 docker run -it -p 8000:8000 --rm 654934115675.dkr.ecr.ap-southeast-1.amazonaws.com/python-fastapi
 ```
 
+## BUILD X 
+for building multiple platform in the sametime
